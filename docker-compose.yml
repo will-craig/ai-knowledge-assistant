@@ -1,0 +1,41 @@
+version: '3.8'
+
+services:
+  backend:
+    build: ./backend
+    container_name: rag-backend
+    volumes:
+      - ./backend:/app
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      - OPENAI_API_KEY=your-key-here
+      - DATABASE_URL=postgresql://postgres:postgres@db:5432/ragdb
+
+  frontend:
+    build: ./frontend
+    container_name: rag-frontend
+    volumes:
+      - ./frontend:/app
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+
+  db:
+    image: ankane/pgvector
+    container_name: rag-db
+    restart: always
+    environment:
+      POSTGRES_DB: ragdb
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
