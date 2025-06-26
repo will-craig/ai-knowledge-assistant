@@ -1,8 +1,0 @@
-fastapi
-uvicorn
-langchain
-openai
-pdfplumber
-"pydantic[dotenv]"
-"psycopg[binary]"
-sqlalchemy
