@@ -10,9 +10,8 @@ services:
       - "8000:8000"
     depends_on:
       - db
-    environment:
-      - OPENAI_API_KEY=your-key-here
-      - DATABASE_URL=postgresql://postgres:postgres@db:5432/ragdb
+    env_file:
+      - ./backend/.env
 
   frontend:
     build: ./frontend
