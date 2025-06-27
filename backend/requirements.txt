@@ -1,9 +1,19 @@
-python-multipart
-fastapi
-uvicorn
-langchain
-openai
-pdfplumber
-pydantic[dotenv]
-psycopg[binary]
-sqlalchemy
+fastapi #Web framework
+python-multipart #For file uploads
+uvicorn #ASGI server for FastAPI
+langchain #OpenAI Embeddings	
+
+python-docx #For handling Word documents
+pdfplumber #PDF parsing
+pydantic[dotenv] #For environment variable management
+python-dotenv #For loading environment variables from .env file
+
+# LLM and Embeddings
+openai #OpenAi Embeddings	
+langchain-openai #OpenAI Embeddings for LangChain
+langchain-community  #OpenAI Embeddings	
+
+# Vector store and database management
+pgvector #PostgreSQL vector extension for storing embeddings
+sqlalchemy #SQL toolkit and Object-Relational Mapping (ORM) system for Python
+psycopg[binary] #PostgreSQL adapter for Python
