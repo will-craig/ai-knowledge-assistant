@@ -1,0 +1,49 @@
+#Python artifacts
+
+pycache/
+*.py[cod]
+*$py.class
+
+#Virtual environments
+
+venv/
+.env
+backend/venv/
+backend/.venv/
+
+#SQLAlchemy SQLite database files (if any)
+
+*.db
+
+#Docker artifacts
+
+.log
+docker-compose.override.yml
+.env.
+
+#Node.js / Next.js
+
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+#Editor and IDE files
+
+.vscode/
+.idea/
+*.swp
+*~
+.DS_Store
+
+#Test and coverage reports
+
+coverage/
+.pytest_cache/
+
+#Build and dependency folders
+
+dist/
+build/
