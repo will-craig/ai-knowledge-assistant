@@ -7,9 +7,21 @@ from docx import Document as DocxDocument
 
 from llm_pipeline import get_embedding
 from vectorstore.db import Document, SessionLocal, init_db, search_similar_documents
+
 import os
 
 app = FastAPI()
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:3000"],  # your frontend origin
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 init_db()
 UPLOAD_DIR = "uploaded_pdfs"
 os.makedirs(UPLOAD_DIR, exist_ok=True)
