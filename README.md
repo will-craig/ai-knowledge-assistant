@@ -1,6 +1,6 @@
-Learning project to help dive into AI. A RAG pipeline; vector DB and LLM api. Plus some React + Next.js for practice.
+Self learning project to help dive into the world of AI. A RAG pipeline; vector DB and LLM api. Plus some React + Next.js for practice.
 
-What this does:
+## What this does
 This is a RAG(Retrieval-Augmented Generation) app
 
 1) Lets you upload a number of pdf and word documents, with the upload api endpoint.
@@ -13,3 +13,6 @@ We then store those embeddings/chunks in a vector (postgres) database.
 A vector Database as opposed to a standard rdb, uses vector indexes rather than specific values like an id. Which allows a fast nearest-neighbor search. Each record stores embeddings in a special vector column. The database builds an index optimized for neighbor queries. I.e. Like a phonebook that rather than being sorted alphabetically, arranges similar-sounding names to be clustered together to allow finding the closest matches.
 
 When a user searches we forward on their search term/query to the OpenAI llm once again to get its embedding / vector -  an query this vector against the existing ones in our database. Behind the scenes some fancy geometric math happens; fancy math like cosine similarity or Euclidean distance. And we return the top 3 results, based on their distance score. Simple really.
+
+## How to run
+Docker compose up from root
