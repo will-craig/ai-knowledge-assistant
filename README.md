@@ -1,4 +1,4 @@
-Learning project to help dive into AI; sample using RAG pipelines, vector DB and LLM api. Plus some React + Next.js for practice.
+Learning project to help dive into AI. A RAG pipeline; vector DB and LLM api. Plus some React + Next.js for practice.
 
 What this does:
 This is a RAG(Retrieval-Augmented Generation) app
